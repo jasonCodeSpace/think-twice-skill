@@ -8,6 +8,12 @@ venv/
 env/
 ENV/
 
+# Environment & Secrets
+.env
+.env.local
+*.key
+*secret*
+
 # Data
 data/*.json
 !data/.gitkeep
