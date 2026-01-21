@@ -14,14 +14,24 @@ Think-Twice 是一个 Claude Code skill，通过分析历史上的失败创业�
 
 ## 安装
 
-### 1. 克隆仓库
+### 快速安装
+
+```bash
+git clone https://github.com/your-username/think-twice.git
+cd think-twice
+./install.sh
+```
+
+### 手动安装
+
+#### 1. 克��仓库
 
 ```bash
 git clone https://github.com/your-username/think-twice.git
 cd think-twice
 ```
 
-### 2. 安装依赖
+#### 2. 安装依赖
 
 ```bash
 # 创建虚拟环境
@@ -202,6 +212,22 @@ Think-Twice 是一个基于失败创业案例数据库的 AI 创业想法分析�
 ## 数据来源
 
 基于 [Loot Drop](https://www.loot-drop.io/) 的 920+ 失败创业案例数据库。
+
+数据文件已包含在仓库中：
+- `data/startups_classified.json` - 带分类标注的公司数据
+- `data/startups_vectors.json` - 语义搜索向量嵌入
+
+### 更新数据
+
+如需更新数据或重新生成向量：
+
+```bash
+# 从原始 Loot Drop 数据生成
+python scripts/prepare_data.py --raw path/to/raw_data.json
+
+# 或从已有 classified 文件重新生成向量
+python scripts/prepare_data.py --regenerate-vectors
+```
 
 ## 行业分类
 

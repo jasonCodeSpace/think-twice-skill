@@ -40,12 +40,13 @@ if [ ! -f "data/startups_classified.json" ] || [ ! -f "data/startups_vectors.jso
     echo ""
     echo "⚠️  数据文件未找到"
     echo ""
-    echo "请从以下地址下载数据文件:"
-    echo "https://github.com/your-username/think-twice/releases/download/v1.0/data.zip"
+    echo "数据文件应该包含在仓库中。请确认:"
+    echo "  1. 你已完整克隆仓库（包括数据文件）"
+    echo "  2. 或者查看 README.md 了解如何获取数据"
     echo ""
-    echo "然后解压到 data/ 目录"
-    echo ""
-    echo "或者运行: python scripts/prepare_data.py"
+    echo "所需文件:"
+    echo "  - data/startups_classified.json"
+    echo "  - data/startups_vectors.json"
 else
     echo "✅ 数据文件已就绪"
 fi

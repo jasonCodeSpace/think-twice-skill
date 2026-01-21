@@ -14,9 +14,10 @@ ENV/
 *.key
 *secret*
 
-# Data
-data/*.json
-!data/.gitkeep
+# Data (但保留核心数据文件)
+# data/*.json  # 注释掉以允许追踪数据文件
+!data/startups_classified.json
+!data/startups_vectors.json
 
 # IDE
 .vscode/

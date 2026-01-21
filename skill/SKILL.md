@@ -20,7 +20,9 @@ description: 基于920+失败创业案例数据库，分析创业想法的可行
 将用户想法翻译成英文，然后静默运行分析：
 
 ```bash
-cd {PROJECT_DIR} && source venv/bin/activate && python -c "
+# 自动检测项目目录（SKILL.md 所在位置的父目录）
+PROJECT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || echo "${0}")")/.." && pwd)"
+cd "$PROJECT_DIR" && source venv/bin/activate && python -c "
 import json
 from enhanced_analyzer import comprehensive_analysis
 idea = '''{用户想法英文}'''
@@ -66,6 +68,3 @@ print(json.dumps(result, ensure_ascii=False, indent=2))
 3. ❓ 是否有冷启动问题？（尤其是双边市场）
 4. ❓ 大厂可以轻易复制吗？护城河在哪？
 5. ❓ 谁是你的Final Boss？你会怎么被碾压？
-
-## 配置
-- {PROJECT_DIR}: /Users/haochengwang/Desktop/loot-drop-startups/think-twice-skill
